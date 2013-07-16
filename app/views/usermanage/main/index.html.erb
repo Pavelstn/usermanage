@@ -1,0 +1,71 @@
+<h1>Управление пользователями</h1>
+<div>
+	id: <%=@user.id %>
+</div>
+<div>
+	email: <%=@user.email %>
+</div>
+<%= link_to 'Сменить пароль', main_app.edit_user_registration_path %>
+<div>
+	sign_in_count: <%=@user.sign_in_count %>
+</div>
+<div>
+	current_sign_in_ip: <%=@user.current_sign_in_ip %>
+</div>
+
+<div>
+	last_sign_in_ip: <%=@user.last_sign_in_ip %>
+</div>
+<div>
+	<% if @user.respond_to?('username') %>
+		username: <%=@user.username %>
+	<% end %>
+</div>
+<div>
+	<% if @user.respond_to?('phone') %>
+		phone: <%=@user.phone %>
+	<% end %>
+</div>
+<div>
+	<% if @user.respond_to?('region_id') %>
+		region_id: <%=@user.region_id %>
+	<% end %>
+</div>
+<div>
+	<% if @user.respond_to?('role') %>
+		role: <%=@user.role %>
+	<% end %>
+</div>
+<div>
+	<% if @user.respond_to?('money') %>
+		money: <%=@user.money %>
+	<% end %>
+</div>
+<% if @user.respond_to?('token') %>
+	<div>
+		created_at: <%=@user.created_at %>
+	</div>
+	<div>
+		isusetoken:<%=@user.isusetoken %>
+	</div>
+	<div>
+		token:<%=@user.token %>
+	</div>
+	<div>
+		create_token_at:<%=@user.create_token_at %>
+	</div>
+	<div>
+		expire_token_at:<%=@user.expire_token_at %>
+	</div>
+	<a href="/usermanage/main/tokenedit">Редактировать токен</a>
+<% end %>
+<% if @user.role=="admin" %>
+<br>
+	<a href="/usermanage/main/userlist">Список пользователей</a>
+<% end %>
+
+
+
+
+
+

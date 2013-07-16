@@ -1,0 +1,11 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+.datetime >*{
+  width: 130px;
+  text-indent: 15px; 
+}
+.long_field{
+	width: 640px !important;
+}

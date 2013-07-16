@@ -1,0 +1,31 @@
+<%= form_for @user , :url => { :action => :tokensave },:method => :post do |f| %>
+
+
+<div class="row">
+  <div class="span1">Активно:</div>
+  <div class="span1"><%= f.check_box :isusetoken %></div>
+</div>
+<div class="row">
+  <div class="span1">Токен</div>
+  <div class="span3"><%= f.text_field :token, :class=>"long_field" %></div>
+</div>
+
+<div class="row">
+  <div class="span1">Создан:</div>
+  <div class="span11 datetime"><%= f.datetime_select :create_token_at %></div>
+  </div>
+
+<div class="row">
+  <div class="span1">Истекает:</div>
+  <div class="span11 datetime"><%= f.datetime_select :expire_token_at %></div>
+</div>
+
+<div class="actions">
+  <%= f.submit "Сохранить" %>
+</div>
+
+
+
+
+
+<% end %>

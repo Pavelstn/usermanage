@@ -1,0 +1,7 @@
+<%= link_to "Назад", :controller => "main" %>
+
+<hr>
+<% @users.each do |user| %>
+email: <%=user.email %> |username: <%=user.username %> |role: <%=user.role %>|
+<hr>
+<% end %>
